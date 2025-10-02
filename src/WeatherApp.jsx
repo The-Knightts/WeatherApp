@@ -8,7 +8,9 @@ const getData = async (BASE_URL) => {
 
 function WeatherApp() {
   const [location, setLocation] = useState("Mumbai");
-  const [weatherIcon, setWeatherIcon] = useState(import.meta.env.BASE_URL + "assets/clear.png");
+  const [weatherIcon, setWeatherIcon] = useState(
+    import.meta.env.BASE_URL + "assets/clear.png"
+  );
   const [data, setData] = useState({});
 
   const API_KEY = "37cab66e1ddf83b375c76dcd6e664d4f";
@@ -25,6 +27,7 @@ function WeatherApp() {
   }, [location]);
 
   // Map API weather condition → local image inside public/assets/
+  // Weather icon
   const getWeatherIcon = (icon) => {
     switch (icon.toLowerCase()) {
       case "clear":
@@ -55,7 +58,11 @@ function WeatherApp() {
           }}
           placeholder="Search"
         />
-        <img src={import.meta.env.BASE_URL + "assets/search.png"} alt="search" className="search-icon" />
+        <img
+          src={import.meta.env.BASE_URL + "assets/search.png"}
+          alt="search"
+          className="search-icon"
+        />
       </div>
 
       {/* Weather Icon + Temp/Location */}
@@ -72,7 +79,10 @@ function WeatherApp() {
       {/* Extra Weather Info */}
       <div className="weather-data">
         <div className="col">
-          <img src={import.meta.env.BASE_URL + "assets/humidity.png"} alt="humidity" />
+          <img
+            src={import.meta.env.BASE_URL + "assets/humidity.png"}
+            alt="humidity"
+          />
           <div>
             <p>{data.main?.humidity}%</p>
             <span>Humidity</span>

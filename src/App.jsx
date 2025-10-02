@@ -7,7 +7,8 @@ const App = () => {
       {/* Background Video */}
       <div className="background-container">
         <video autoPlay loop muted playsInline>
-          <source src={process.env.PUBLIC_URL + "/bg.mp4"} type="video/mp4" />
+          <source src={import.meta.env.BASE_URL + "bg.mp4"} type="video/mp4" />
+
         </video>
       </div>
       <WeatherCard />

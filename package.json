@@ -33,12 +33,12 @@
   "main": "postcss.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/The-Knightts/Weather-App.git"
+    "url": "git+https://github.com/The-Knightts/WeatherApp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/The-Knightts/Weather-App/issues"
+    "url": "https://github.com/The-Knightts/WeatherApp/issues"
   },
-  "homepage": "https://The-Knightts.github.io/Weather"
+  "homepage": "https://The-Knightts.github.io/WeatherApp"
 }
