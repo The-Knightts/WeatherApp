@@ -11,7 +11,7 @@ const App = () => {
           loop
           muted
           className="background-video"
-          src="/videos/bg.mp4"
+          src="/bg.mp4"
         ></video>
       </div>
     <WeatherCard/>
