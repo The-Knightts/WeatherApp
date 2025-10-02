@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
-import WeatherCard from './WeatherApp';
+import React, { useState } from "react";
+import WeatherCard from "./WeatherApp";
 
 const App = () => {
   return (
     <>
       {/* Background Video */}
       <div className="background-container">
-        <video
-          autoPlay
-          loop
-          muted
-          className="background-video"
-          src="/bg.mp4"
-        ></video>
+        <video autoPlay loop muted playsInline>
+          <source src="/bg.mp4" type="video/mp4" />
+        </video>
       </div>
-    <WeatherCard/>
+      <WeatherCard />
     </>
   );
 };

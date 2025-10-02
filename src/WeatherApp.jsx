@@ -24,6 +24,7 @@ function WeatherApp() {
     });
   }, [location]);
 
+  // Map API weather condition → local image inside public/assets/
   const getWeatherIcon = (icon) => {
     switch (icon.toLowerCase()) {
       case "clear":
@@ -43,6 +44,7 @@ function WeatherApp() {
 
   return (
     <div className="weather">
+      {/* Search Bar */}
       <div className="search-bar">
         <input
           type="text"
@@ -53,8 +55,11 @@ function WeatherApp() {
           }}
           placeholder="Search"
         />
+        {/* Optional: Add search icon if you want */}
+        <img src="/assets/search.png" alt="search" className="search-icon" />
       </div>
 
+      {/* Weather Icon + Temp/Location */}
       <div className="align">
         <img src={weatherIcon} alt="weather" className="weather-icon" />
         <div className="content">
@@ -65,6 +70,7 @@ function WeatherApp() {
         </div>
       </div>
 
+      {/* Extra Weather Info */}
       <div className="weather-data">
         <div className="col">
           <img src="/assets/humidity.png" alt="humidity" />
