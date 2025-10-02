@@ -25,5 +25,17 @@
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",
     "vite": "^5.3.1"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Knightts/Weather-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Knightts/Weather-App/issues"
+  },
+  "homepage": "https://github.com/The-Knightts/Weather-App#readme"
 }
