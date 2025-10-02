@@ -8,7 +8,7 @@ const getData = async (BASE_URL) => {
 
 function WeatherApp() {
   const [location, setLocation] = useState("Mumbai");
-  const [weatherIcon, setWeatherIcon] = useState("/assets/clear.png");
+  const [weatherIcon, setWeatherIcon] = useState(import.meta.env.BASE_URL + "assets/clear.png");
   const [data, setData] = useState({});
 
   const API_KEY = "37cab66e1ddf83b375c76dcd6e664d4f";
@@ -28,17 +28,17 @@ function WeatherApp() {
   const getWeatherIcon = (icon) => {
     switch (icon.toLowerCase()) {
       case "clear":
-        return "/assets/clear.png";
+        return import.meta.env.BASE_URL + "assets/clear.png";
       case "rain":
-        return "/assets/rain.png";
+        return import.meta.env.BASE_URL + "assets/rain.png";
       case "clouds":
-        return "/assets/cloud.png";
+        return import.meta.env.BASE_URL + "assets/cloud.png";
       case "drizzle":
-        return "/assets/drizzle.png";
+        return import.meta.env.BASE_URL + "assets/drizzle.png";
       case "snow":
-        return "/assets/snow.png";
+        return import.meta.env.BASE_URL + "assets/snow.png";
       default:
-        return "/assets/clear.png";
+        return import.meta.env.BASE_URL + "assets/clear.png";
     }
   };
 
@@ -55,8 +55,7 @@ function WeatherApp() {
           }}
           placeholder="Search"
         />
-        {/* Optional: Add search icon if you want */}
-        <img src="/assets/search.png" alt="search" className="search-icon" />
+        <img src={import.meta.env.BASE_URL + "assets/search.png"} alt="search" className="search-icon" />
       </div>
 
       {/* Weather Icon + Temp/Location */}
@@ -73,14 +72,14 @@ function WeatherApp() {
       {/* Extra Weather Info */}
       <div className="weather-data">
         <div className="col">
-          <img src="/assets/humidity.png" alt="humidity" />
+          <img src={import.meta.env.BASE_URL + "assets/humidity.png"} alt="humidity" />
           <div>
             <p>{data.main?.humidity}%</p>
             <span>Humidity</span>
           </div>
         </div>
         <div className="col">
-          <img src="/assets/wind.png" alt="wind" />
+          <img src={import.meta.env.BASE_URL + "assets/wind.png"} alt="wind" />
           <div>
             <p>{data.wind?.speed} Km/hr</p>
             <span>Wind Speed</span>
