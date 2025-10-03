@@ -76,7 +76,7 @@ function WeatherApp() {
       <div className="weather-data">
         <div className="col">
           <img
-            src={import.meta.env.BASE_URL + "assets/humidity.png"}
+            src={import.meta.env.BASE_URL + "humidity.png"}
             alt="humidity"
           />
           <div>
@@ -85,7 +85,7 @@ function WeatherApp() {
           </div>
         </div>
         <div className="col">
-          <img src={import.meta.env.BASE_URL + "assets/wind.png"} alt="wind" />
+          <img src={import.meta.env.BASE_URL + "wind.png"} alt="wind" />
           <div>
             <p>{data.wind?.speed} Km/hr</p>
             <span>Wind Speed</span>
