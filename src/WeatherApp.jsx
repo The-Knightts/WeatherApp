@@ -1,16 +1,23 @@
 import "./App Copy.css";
 import { useEffect, useState } from "react";
 
+// Import weather icons from src/assets
+import clearIcon from "./assets/clear.png";
+import rainIcon from "./assets/rain.png";
+import cloudIcon from "./assets/cloud.png";
+import drizzleIcon from "./assets/drizzle.png";
+import snowIcon from "./assets/snow.png";
+import humidityIcon from "./assets/humidity.png";
+import windIcon from "./assets/wind.png";
+
 const getData = async (BASE_URL) => {
-  let data = (await fetch(BASE_URL)).json();
+  const data = await (await fetch(BASE_URL)).json();
   return data;
 };
 
 function WeatherApp() {
   const [location, setLocation] = useState("Mumbai");
-  const [weatherIcon, setWeatherIcon] = useState(
-    import.meta.env.BASE_URL + "clear.png"
-  );
+  const [weatherIcon, setWeatherIcon] = useState(clearIcon);
   const [data, setData] = useState({});
 
   const API_KEY = "37cab66e1ddf83b375c76dcd6e664d4f";
@@ -26,22 +33,21 @@ function WeatherApp() {
     });
   }, [location]);
 
-  // Map API weather condition → local image inside public/assets/
-  // Weather icon
+  // Map API weather condition → imported icon
   const getWeatherIcon = (icon) => {
     switch (icon.toLowerCase()) {
       case "clear":
-        return import.meta.env.BASE_URL + "clear.png";
+        return clearIcon;
       case "rain":
-        return import.meta.env.BASE_URL + "rain.png";
+        return rainIcon;
       case "clouds":
-        return import.meta.env.BASE_URL + "cloud.png";
+        return cloudIcon;
       case "drizzle":
-        return import.meta.env.BASE_URL + "drizzle.png";
+        return drizzleIcon;
       case "snow":
-        return import.meta.env.BASE_URL + "snow.png";
+        return snowIcon;
       default:
-        return import.meta.env.BASE_URL + "clear.png";
+        return clearIcon;
     }
   };
 
@@ -58,7 +64,6 @@ function WeatherApp() {
           }}
           placeholder="Search"
         />
-        
       </div>
 
       {/* Weather Icon + Temp/Location */}
@@ -75,17 +80,14 @@ function WeatherApp() {
       {/* Extra Weather Info */}
       <div className="weather-data">
         <div className="col">
-          <img
-            src={import.meta.env.BASE_URL + "humidity.png"}
-            alt="humidity"
-          />
+          <img src={humidityIcon} alt="humidity" />
           <div>
             <p>{data.main?.humidity}%</p>
             <span>Humidity</span>
           </div>
         </div>
         <div className="col">
-          <img src={import.meta.env.BASE_URL + "wind.png"} alt="wind" />
+          <img src={windIcon} alt="wind" />
           <div>
             <p>{data.wind?.speed} Km/hr</p>
             <span>Wind Speed</span>
