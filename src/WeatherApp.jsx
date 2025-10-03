@@ -9,7 +9,7 @@ const getData = async (BASE_URL) => {
 function WeatherApp() {
   const [location, setLocation] = useState("Mumbai");
   const [weatherIcon, setWeatherIcon] = useState(
-    import.meta.env.BASE_URL + "/.assets/clear.png"
+    import.meta.env.BASE_URL + "clear.png"
   );
   const [data, setData] = useState({});
 
