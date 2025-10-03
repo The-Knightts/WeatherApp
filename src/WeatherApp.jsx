@@ -31,17 +31,17 @@ function WeatherApp() {
   const getWeatherIcon = (icon) => {
     switch (icon.toLowerCase()) {
       case "clear":
-        return import.meta.env.BASE_URL + "assets/clear.png";
+        return import.meta.env.BASE_URL + "clear.png";
       case "rain":
-        return import.meta.env.BASE_URL + "assets/rain.png";
+        return import.meta.env.BASE_URL + "rain.png";
       case "clouds":
-        return import.meta.env.BASE_URL + "assets/cloud.png";
+        return import.meta.env.BASE_URL + "cloud.png";
       case "drizzle":
-        return import.meta.env.BASE_URL + "assets/drizzle.png";
+        return import.meta.env.BASE_URL + "drizzle.png";
       case "snow":
-        return import.meta.env.BASE_URL + "assets/snow.png";
+        return import.meta.env.BASE_URL + "snow.png";
       default:
-        return import.meta.env.BASE_URL + "assets/clear.png";
+        return import.meta.env.BASE_URL + "clear.png";
     }
   };
 
